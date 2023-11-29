@@ -1,6 +1,7 @@
 <script>
 import { store } from "../store";
 export default {
+  emits: ["performSearch"],
   data() {
     return {
       store,
@@ -17,12 +18,12 @@ export default {
     <p>
       Boolflix is a web application that allows you to search for movies and TV series by title, genre and cast.
     </p>
-  </div>
-  <button>
-    <a href="" target="_blank">Search Movie</a></button>
-    <input  v-model.trim="store.searchText" type="text" class="form-control" placeholder="inizia la ricerca">
+  
   <button @click="$emit('performSearch')">
-    <a href="" target="_blank">Search TV Series</a></button>
+    <a href="" target="_blank">Search Movie</a></button>
+    
+    <input  v-model.trim="store.searchText" type="text" class="form-control" placeholder="inizia la ricerca">
+  </div>
 </template>
 
 <style  lang="scss" scoped></style>
