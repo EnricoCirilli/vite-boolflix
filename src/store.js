@@ -7,5 +7,4 @@ export const store = reactive({
     apiKey: '204f12915bca19cfb24a8d110bd9bcae',
     movieSearch: '/movie',
     tvSeriesSearch: '/tv',
-    searchText: ''
 })

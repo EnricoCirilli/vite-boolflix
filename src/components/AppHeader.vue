@@ -1,3 +1,5 @@
+
+
 <script>
 import { store } from "../store";
 export default {
@@ -11,20 +13,62 @@ export default {
 
 </script>
 
+
+
 <template>
-  <div class="card">
+
+  <header class="card">
     <h1>Boolflix</h1>
-    <h2>What is Boolflix?</h2>
-    <p>
-      Boolflix is a web application that allows you to search for movies and TV series by title, genre and cast.
-    </p>
-  
-  <button @click="$emit('performSearch')">
-    <a href="" target="_blank">Search Movie</a></button>
-    
-    <input  v-model.trim="store.searchText" type="text" class="form-control" placeholder="inizia la ricerca">
-  </div>
+    <label for="search"></label>
+    <button @click="$emit('performSearch')">
+      Search</button>
+    <input v-model="store.searchText" type="text" id="search">
+    </header>
+
 </template>
 
-<style  lang="scss" scoped></style>
+
+
+
+<style  lang="scss" scoped>
+.card { 
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 20px;
+  background-color: #000;
+  color: #fff;
+  height: 80px;
+  h1 {
+    font-size: 30px;
+    font-weight: 700;
+    color: red;
+  }
+  input {
+    width: 300px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    padding: 0 10px;
+    font-size: 16px;
+    color: #000;
+  }
+  button {
+    width: 100px;
+    height: 30px;
+    border-radius: 5px;
+    border: 1px solid #fff;
+    background-color: #fff;
+    color: #000;
+    font-size: 16px;
+    font-weight: 700;
+    cursor: pointer;
+  }
+  
+}
+  
+  
+
+</style>
 
