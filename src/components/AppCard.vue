@@ -23,8 +23,8 @@ methods: {
 <template>
     <div class="row">
 <div class="col">
-<h2>{{ movieObj.title }}</h2>
-<h3>{{  movieObj.original_title }}</h3>
+<h2>{{ movieObj.title ? movieObj.title : movieObj.name}}</h2>
+<h3>{{  movieObj.original_title ? movieObj.original_title : movieObj.original_name }}</h3>
 <img  v-if="flags.includes(movieObj.original_language)" :src="getFlagUrl(movieObj.original_language)" alt="">
 <p v-else>{{  movieObj.original_language }}</p>
 <p>{{  movieObj.vote_average }}</p>

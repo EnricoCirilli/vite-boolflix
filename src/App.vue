@@ -21,6 +21,8 @@ export default {
   methods: {
     handleSearch() {
       // console.log("handleSearch");
+      //chiamata per movie
+
       axios.get(`${this.store.apiUrl}/search/movie`, {
           params: {
             query: this.store.searchText,
@@ -30,7 +32,18 @@ export default {
         .then((resp) => {
           console.log(resp);
           this.store.moviesList = resp.data.results
-        })
+        });
+        //chiamata per serie tv
+
+        axios.get(`${this.store.apiUrl}/search/tv`, {
+          params: {
+            query: this.store.searchText,
+            api_key: this.store.apiKey,
+          }
+        }).then((resp) => {
+          console.log(resp);
+          this.store.seriesList = resp.data.results
+        });
     }
   },
   }
