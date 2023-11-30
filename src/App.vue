@@ -6,6 +6,7 @@ import axios from "axios";
 import AppHeader from "./components/AppHeader.vue";
 import AppMain from "./components/AppMain.vue";
 
+
 export default {
   //DATA
   data() {
@@ -20,10 +21,10 @@ export default {
   methods: {
     handleSearch() {
       // console.log("handleSearch");
-      axios.get("https://api.themoviedb.org/3/search", {
+      axios.get(`${this.store.baseapiUrl}/search/movie`, {
           params: {
             query: this.store.searchText,
-            api_key: '204f12915bca19cfb24a8d110bd9bcae'
+            api_key: this.store.apiKey,
           }
         })
         .then((resp) => {

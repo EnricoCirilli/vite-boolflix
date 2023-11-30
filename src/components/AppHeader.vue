@@ -3,12 +3,13 @@
 <script>
 import { store } from "../store";
 export default {
-  emits: ["perform-Search"],
+  
   data() {
     return {
       store,
     };
   },
+  emits: ["perform-search"],
 };
 
 </script>
@@ -19,7 +20,7 @@ export default {
 
   <header class="card">
     <h1>Boolflix</h1>
-    <button @click="$emit('perform-Search')">
+    <button @click="$emit('perform-search')">
       Search</button>
     <input v-model="store.searchText" type="text" id="search">
     </header>
