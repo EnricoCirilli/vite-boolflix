@@ -2,6 +2,7 @@
 export default {
     props: {
         movieObj: Object,
+        vote_average: Number,
 
     },
     data() {
@@ -15,6 +16,12 @@ export default {
             return new URL(`../assets/images/${language}.png`, import.meta.url).href;
         }
     },
+    computed: {
+            vote(){
+                return Math.ceil(this.movieObj.vote_average / 2)
+
+            }
+        }
 };
 
 
@@ -34,9 +41,17 @@ export default {
             <!-- sezione titoli -->
             <h2>{{ movieObj.title ? movieObj.title : movieObj.name }}</h2>
             <h3>{{ movieObj.original_title ? movieObj.original_title : movieObj.original_name }}</h3>
+            <!-- lingua sezione -->
             <img v-if="flags.includes(movieObj.original_language)" :src="getFlagUrl(movieObj.original_language)" alt="">
             <p v-else>{{ movieObj.original_language }}</p>
-            <p>{{ movieObj.vote_average }}</p>
+            <div>
+                <p>
+                     <!-- {{ movieObj.vote_average }} -->
+                    <i v-for="(star, index) in 5" :key="index" :class="star <= vote ? 'fa-solid' : 'fa-regular'" class="fa-star"></i>
+                </p>
+
+                    </div>
+            
         </div>
     </div>
 </template>
@@ -44,24 +59,16 @@ export default {
 
 
 <style scoped lang="scss">
-//  img{
-//     width: 50px;
-//     height: 50px;
-//     border-radius: 50%;
-//     border: 2px solid #fff;
-//     position: absolute;
-//     top: 10px;
-//     right: 10px;
-// }
-.row {
-    float: left;
-
+.poster {
+    width: 500px;
+    height: 100%;
+    object-fit: cover;
+    border-radius: 10px;
 }
-
-.col {
-    width: 50%;
-    padding: 0 10px;
-    box-sizing: border-box;
-    float: left;
+img {
+    width: 50px;
+    height: 100%;
+    object-fit: cover;
+    
 }
 </style>
