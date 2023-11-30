@@ -1,7 +1,7 @@
 <script>
 import { store } from "./store";
 import axios from "axios";
-import HeaderBoolflix from "./components/HeaderBoolflix.vue";
+import AppHeader from "./components/AppHeader.vue";
 
 export default {
   data() {
@@ -10,7 +10,7 @@ export default {
     };
   },
   components: {
-    HeaderBoolflix,
+    AppHeader,
   },
   methods: {
     handleSearch() {
@@ -33,7 +33,7 @@ export default {
 
 <template>
   
-  <HeaderBoolflix @performSearch="handleSearch"/>
+  <AppHeader @performSearch="handleSearch"/>
 
 
 
