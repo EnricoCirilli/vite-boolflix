@@ -15,7 +15,7 @@ export default {
 
 <template>
 <section>
-    <div v-for="movie in store.moviesList">
+    <div v-for="movie in store.moviesList" :key="movie.id">
     <AppCard :movieObj="movie" />
     </div>
 </section>

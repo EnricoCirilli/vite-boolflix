@@ -21,7 +21,7 @@ export default {
   methods: {
     handleSearch() {
       // console.log("handleSearch");
-      axios.get(`${this.store.baseapiUrl}/search/movie`, {
+      axios.get(`${this.store.apiUrl}/search/movie`, {
           params: {
             query: this.store.searchText,
             api_key: this.store.apiKey,
