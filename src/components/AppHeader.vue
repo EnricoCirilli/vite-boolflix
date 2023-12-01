@@ -32,6 +32,7 @@ export default {
 
 <style  lang="scss" scoped>
 .card { 
+  border-radius: 10px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
@@ -41,6 +42,8 @@ export default {
   color: #fff;
   height: 80px;
   h1 {
+    letter-spacing: 3px;
+    margin: 10px 0;
     font-size: 30px;
     font-weight: 700;
     color: red;
@@ -55,6 +58,7 @@ export default {
     color: #000;
   }
   button {
+    letter-spacing: 2px;
     width: 100px;
     height: 30px;
     border-radius: 5px;

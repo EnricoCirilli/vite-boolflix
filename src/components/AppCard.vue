@@ -17,11 +17,11 @@ export default {
         }
     },
     computed: {
-            vote(){
-                return Math.ceil(this.movieObj.vote_average / 2)
+        vote() {
+            return Math.ceil(this.movieObj.vote_average / 2)
 
-            }
         }
+    }
 };
 
 
@@ -44,14 +44,15 @@ export default {
             <!-- lingua sezione -->
             <img v-if="flags.includes(movieObj.original_language)" :src="getFlagUrl(movieObj.original_language)" alt="">
             <p v-else>{{ movieObj.original_language }}</p>
-            <div>
-                <p>
-                     <!-- {{ movieObj.vote_average }} -->
-                    <i v-for="(star, index) in 5" :key="index" :class="star <= vote ? 'fa-solid' : 'fa-regular'" class="fa-star"></i>
-                </p>
 
-                    </div>
+            <!-- stelle votazione -->
+            <p class="star">
+                <!-- {{ movieObj.vote_average }} -->
+                <i v-for="(star, index) in 5" :key="index" :class="star <= vote ? 'fa-solid' : 'fa-regular'"
+                    class="fa-star"></i>
+            </p>
             
+
         </div>
     </div>
 </template>
@@ -59,16 +60,29 @@ export default {
 
 
 <style scoped lang="scss">
+.row{
+ 
+}
+.col{
+   
+}
 .poster {
-    width: 500px;
-    height: 100%;
+    width:240px;
+    height: 350px;
     object-fit: cover;
     border-radius: 10px;
 }
+
 img {
     width: 50px;
     height: 100%;
     object-fit: cover;
-    
+
 }
-</style>
+
+.star {
+    color: #f1c40f;
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+}</style>
