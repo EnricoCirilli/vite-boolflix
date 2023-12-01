@@ -15,10 +15,10 @@ export default {
 
 <template>
     <section>
-        <h2 class="text-red mb-2 text-center"> Movies</h2>
-        <div class="container d-flex">
+        <h2 class="text-danger mb-2 text-center"> Movies</h2>
+        <div class="container d-flex align-items-center">
           
-            <div class="row row-cols-5 ">
+            <div class="row row-cols-5 g-4">
                 
                     <div v-for="movie in store.moviesList" :key="movie.id">
                         <AppCard :movieObj="movie" />
@@ -26,7 +26,7 @@ export default {
                 </div>
             
         </div>   
-        <h2 class="text-red mb-2 text-center"> Serie tv</h2>
+        <h2 class="text-danger mb-2 text-center"> Serie tv</h2>
         <div class="container d-flex align-items-center">
             
             <div>
@@ -41,4 +41,7 @@ export default {
 </template>
 
 
-<style scoped lang="scss"></style>
+<style scoped lang="scss">
+
+
+</style>

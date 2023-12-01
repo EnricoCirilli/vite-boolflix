@@ -30,8 +30,8 @@ export default {
 
 <template>
   
-    <div class="card">
-      <div class="card-body">
+   
+      <div class="card h-100 text-bg-dark">
                 <img v-if="movieObj.poster_path" class="poster"
                     :src="`https://image.tmdb.org/t/p/w342/${movieObj.poster_path}`" :alt="movieObj.title">
                 <img v-else src="https://www.altavod.com/assets/images/poster-placeholder.png" class="poster"
@@ -51,7 +51,7 @@ export default {
                         class="fa-star"></i>
                 </p>
                 </div>
-            </div>
+            
 </template>
 
 
@@ -60,7 +60,7 @@ export default {
 
 
 .poster {
-    width: 13rem;
+    width: 12.6rem;
     height: 18rem;
     object-fit: cover;
     border-radius: 10px;
